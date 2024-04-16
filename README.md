@@ -2,9 +2,9 @@
 
 This project is a comprehensive marks management system designed to streamline the process of recording, updating, and accessing student marks for teachers, students, and administrators. Below are the key features and functionalities of the system:
 
-## Installation
-
 [To run this on replit](https://replit.com/@cuser1100replit/marks-management-system?v=1)
+
+## Installation
 
 1. Clone the Repository
 
