@@ -4,6 +4,8 @@ This project is a comprehensive marks management system designed to streamline t
 
 ## Installation
 
+[To run this on replit](https://replit.com/@manirulkaji78re/marks-management-system)
+
 1. Clone the Repository
 
     ```bash
