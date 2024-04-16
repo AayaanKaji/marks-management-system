@@ -258,6 +258,9 @@ class MarkDB:
             print("Mark not valid")
             return "Mark not valid"
         
+        if (not rollNo) or (not subject_id):
+            return "One or more fields, entered are blanks."
+        
         stud = StudentDB()
         if not stud.roll_exists(rollNo):
             print("Student doesn't exist.")
@@ -267,9 +270,7 @@ class MarkDB:
         if not sub.subject_exists(subject_id):
             print("Subject doesn't exist.")
             return "Subject doesn't exist."
-        
-        if (not rollNo) or (not subject_id):
-            return "One or more fields, entered are blanks."
+
         try:
             grade = self.calculateGrade(mark)
             self.cursor.execute("UPDATE marks SET mark=?, grade=? WHERE rollNo=? AND subject_id=?",

@@ -37,15 +37,12 @@ for details in student_details:
 
 
 rolls = student_db.get_rolls()
+student_db.close_connection()
 
 for roll in rolls:
     for subject_id in range(1, 7):
-        if marks.get_grade(1, 1) is not None or not marks.get_grade(1, 1):
-            break
         mark = random.randint(60, 100)
         marks.update_mark(roll[0], subject_id, mark)
-
         
-student_db.close_connection()
 marks.close_connection()
 result.close_connection()
