@@ -29,6 +29,8 @@ This project is a comprehensive marks management system designed to streamline t
 
     Execute the following command for the initial setup: (this may take a while)
 
+    **WARNING:** The `make` command is used to load demo data into the database with **predefined user IDs and passwords (admin IDs: 1 to 2, teacher IDs: 1 to 7, student IDs: 1 to 20, all with the password "1234")**. If you prefer to use custom data, navigate to the `demo_setup` directory and modify the files accordingly.
+
     ```bash
     make
     ```
@@ -40,6 +42,10 @@ This project is a comprehensive marks management system designed to streamline t
     ```bash
     python3 main.py
     ```
+
+    **Note:** While logging in, please use the IDs and passwords provided earlier.
+
+    **Note:** There is a known issue with the login system. If you navigate back to the welcome page after logging in, please press the reload button to refresh the login page and avoid any unexpected behavior.
 
 ## Features
 
