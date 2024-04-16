@@ -85,7 +85,7 @@ This project is a comprehensive marks management system designed to streamline t
     make
     ```
 
-3. Launch the GUI
+4. Launch the GUI
 
     After the initial setup, launch the graphical user interface (GUI) using the following command:
 
