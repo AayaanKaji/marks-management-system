@@ -2,6 +2,45 @@
 
 This project is a comprehensive marks management system designed to streamline the process of recording, updating, and accessing student marks for teachers, students, and administrators. Below are the key features and functionalities of the system:
 
+## Installation
+
+1. Clone the Repository
+
+    ```bash
+    git clone [repository_url]
+    ```
+
+2. Install Dependencies
+  
+    Ensure you have Python installed on your system.
+    Install Tkinter using the following command:
+
+    ```bash
+    pip install tk
+    ```
+
+3. Initial Setup
+
+    Navigate to the project directory:
+
+    ```bash
+    cd marks-managemnet-system
+    ```
+
+    Execute the following command for the initial setup: (this may take a while)
+
+    ```bash
+    make
+    ```
+
+4. Launch the GUI
+
+    After the initial setup, launch the graphical user interface (GUI) using the following command:
+
+    ```bash
+    python3 main.py
+    ```
+
 ## Features
 
 ### User Roles
@@ -53,42 +92,3 @@ This project is a comprehensive marks management system designed to streamline t
 
 - **Database**
   - SQLite3 - Ensuring robust and efficient data storage and retrieval.
-
-## Installation
-
-1. Clone the Repository
-
-    ```bash
-    git clone [repository_url]
-    ```
-
-2. Install Dependencies
-  
-    Ensure you have Python installed on your system.
-    Install Tkinter using the following command:
-
-    ```bash
-    pip install tk
-    ```
-
-3. Initial Setup
-
-    Navigate to the project directory:
-
-    ```bash
-    cd marks-managemnet-system
-    ```
-
-    Execute the following command for the initial setup: (this may take a while)
-
-    ```bash
-    make
-    ```
-
-4. Launch the GUI
-
-    After the initial setup, launch the graphical user interface (GUI) using the following command:
-
-    ```bash
-    python3 main.py
-    ```
