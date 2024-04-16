@@ -1,4 +1,4 @@
-# Project Marks Management System
+# Marks Management System
 
 This project is a comprehensive marks management system designed to streamline the process of recording, updating, and accessing student marks for teachers, students, and administrators. Below are the key features and functionalities of the system:
 
@@ -45,14 +45,14 @@ This project is a comprehensive marks management system designed to streamline t
 
 ## Technologies Used
 
-- Frontend
-  - Tkinter
+- **Frontend**
+  - Tkinter - Crafting engaging graphical user interfaces with finesse.
 
-- Backend
-  - python
+- **Backend**
+  - Python - Empowering seamless data processing and management.
 
-- Database
-  - sqlite3
+- **Database**
+  - SQLite3 - Ensuring robust and efficient data storage and retrieval.
 
 ## Installation
 
@@ -62,7 +62,16 @@ This project is a comprehensive marks management system designed to streamline t
     git clone [repository_url]
     ```
 
-2. Initial Setup
+2. Install Dependencies
+  
+    Ensure you have Python installed on your system.
+    Install Tkinter using the following command:
+
+    ```bash
+    pip install tk
+    ```
+
+3. Initial Setup
 
     Navigate to the project directory:
 
