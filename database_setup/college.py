@@ -195,7 +195,7 @@ class GradeDB:
         self.connection.commit()
     
     def add_grade(self, grade: str, lower_bound: int, upper_bound: int) -> str:
-        if (not grade) or (not lower_bound) or (not upper_bound):
+        if (not grade) or (lower_bound is None) or (not upper_bound):
             return "One or more fields, entered are blanks."
         try:
             self.cursor.execute("INSERT INTO grades (grade, lower_bound, upper_bound) VALUES (?, ?, ?)",

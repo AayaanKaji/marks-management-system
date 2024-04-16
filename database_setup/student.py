@@ -262,13 +262,11 @@ class MarkDB:
         if not stud.roll_exists(rollNo):
             print("Student doesn't exist.")
             return "Student doesn't exist."
-        stud.close_connection()
         
         sub = college.SubjectDB()
         if not sub.subject_exists(subject_id):
             print("Subject doesn't exist.")
             return "Subject doesn't exist."
-        sub.close_connection()
         
         if (not rollNo) or (not subject_id):
             return "One or more fields, entered are blanks."
@@ -280,6 +278,9 @@ class MarkDB:
             return "Mark changed successfully."
         except sqlite3.Error as e:
             print("Error occurred:", e)
+        finally:
+            stud.close_connection()
+            sub.close_connection()
         
     def get_grade(self, rollNo: int, subject_id: int) -> str:
         query = "SELECT grade FROM marks WHERE rollNo = ? AND subject_id = ?"
@@ -449,7 +450,7 @@ class ResultDB:
         return "Result published successfully."
     
     def get_results(self):
-        self.reload_result()
+        # self.reload_result()
         query = "SELECT * FROM results"
         self.cursor.execute(query)
         
@@ -457,7 +458,7 @@ class ResultDB:
         return results
         
     def get_details_by_roll(self, roll: int):
-        self.reload_result()
+        # self.reload_result()
         query = f"SELECT * FROM results WHERE CAST(rollNo AS TEXT) LIKE '%{str(roll)}%' "
         self.cursor.execute(query)
         
@@ -465,22 +466,24 @@ class ResultDB:
         return users
     
     def get_results_with_filter(self, column_id: str):
-        self.reload_result()
+        # self.reload_result()
         if column_id == "Roll":
             query = "SELECT * FROM results"
         elif column_id == "Total":
             query = "SELECT * FROM results ORDER BY gpa DESC"
         else:
-            query = f'''SELECT * FROM results ORDER BY CASE {column_id}
-                    WHEN 'S' THEN 1
-                    WHEN 'A' THEN 2
-                    WHEN 'B' THEN 3
-                    WHEN 'C' THEN 4
-                    WHEN 'D' THEN 5
-                    WHEN 'E' THEN 6
-                    WHEN 'F' THEN 7
-                    ELSE 8
-                    END
+            query = f'''SELECT * FROM results ORDER BY
+                    (CASE {column_id}
+                        WHEN 'S' THEN 1
+                        WHEN 'A' THEN 2
+                        WHEN 'B' THEN 3
+                        WHEN 'C' THEN 4
+                        WHEN 'D' THEN 5
+                        WHEN 'E' THEN 6
+                        WHEN 'F' THEN 7
+                        ELSE 8
+                    END),
+                    gpa DESC, rollNo
                     '''
         self.cursor.execute(query)
         
@@ -488,7 +491,7 @@ class ResultDB:
         return results
         
     def get_details_by_roll_with_filter(self, roll: int, column_id: str):
-        self.reload_result()
+        # self.reload_result()
         if column_id == "Roll":
             query = f"SELECT * FROM results WHERE CAST(rollNo AS TEXT) LIKE '%{str(roll)}%' "
         elif column_id == "Total":
@@ -505,7 +508,7 @@ class ResultDB:
                         WHEN 'F' THEN 7
                         ELSE 8
                     END), 
-                    gpa DESC
+                    gpa DESC, rollNo
                     '''
         
         self.cursor.execute(query)

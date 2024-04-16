@@ -16,6 +16,7 @@ def display_result_page(root: Tk):
     result = ResultDB()
     
     subjects = subs.get_subject_names()
+    result.reload_result()
             
     dashboard_fr = Frame(root, highlightbackground=bg_color, highlightthickness=3)
 

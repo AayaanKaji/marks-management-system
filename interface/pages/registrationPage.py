@@ -105,8 +105,7 @@ def registration_page(root: Tk):
 
     password_lb = Label(registration_page_fr, text='Password', font=('Bold', 15), fg=bg_color)
     password_lb.place(x=100, y=(start + field_gap))
-    password_ent = Entry(registration_page_fr, font=('Bold', 15),
-                         show='*', highlightcolor=bg_color,
+    password_ent = Entry(registration_page_fr, font=('Bold', 15), highlightcolor=bg_color,
                          highlightbackground='grey', highlightthickness=2)
     password_ent.place(x=100, y=(start + field_gap )+ ent_gap)
 

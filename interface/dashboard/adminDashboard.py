@@ -1,6 +1,7 @@
 from interface.util import *
 from database_setup.teacher import TeacherDB
 from database_setup.college import SubjectDB, AdminDB
+from database_setup.student import ResultDB
 
 bg_color_option='#c3c3c3'
 
@@ -252,6 +253,9 @@ def admin_dashboard(root: Tk, identifier: str):
             
             if not result_published_status:
                 if conformation_box(root, "publish result?"):
+                    result = ResultDB()
+                    result.reload_result()
+                    result.close_connection()
                     result_published_status = True
                     change_result_published_status()
                     publish_result_fr.destroy()
